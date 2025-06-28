@@ -12,7 +12,11 @@ required_providers {
 }
 
 provider "aws" "this" {
-  for_each = var.aws_regions
+  for_each = toset(var.aws_regions)
+
+  config {
+    region = each.value
+  }
 }
 
 provider "azurerm" "this" {
