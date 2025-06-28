@@ -1,5 +1,5 @@
-store "varset" "dev_tokens" {
-  id       = "varset-5EVQ7aixsQRDwwk2"
+store "varset" "tokens" {
+  id       = "varset-Bh4fQ4Vxk5CX8r9v"
   category = "env"
 }
 
@@ -13,10 +13,10 @@ deployment "dev" {
     address_space = ["10.0.0.0/16"]
     app_subnet = ["10.0.0.0/22"]
     db_subnet = ["10.0.4.0/22"]
-    client_id = store.varset.dev_tokens.ARM_CLIENT_ID
-    client_secret = store.varset.dev_tokens.ARM_CLIENT_SECRET
-    subscription_id = store.varset.dev_tokens.ARM_SUBSCRIPTION_ID   
-    tenant_id = store.varset.dev_tokens.ARM_TENANT_ID 
+    client_id = store.varset.tokens.ARM_CLIENT_ID
+    client_secret = store.varset.tokens.ARM_CLIENT_SECRET
+    subscription_id = store.varset.tokens.ARM_SUBSCRIPTION_ID   
+    tenant_id = store.varset.tokens.ARM_TENANT_ID 
   }
 }
 
@@ -30,10 +30,10 @@ deployment "prd" {
     address_space = ["10.1.0.0/16"]
     app_subnet = ["10.1.0.0/22"]
     db_subnet = ["10.1.4.0/22"]
-    client_id = store.varset.prd_tokens.ARM_CLIENT_ID
-    client_secret = store.varset.prd_tokens.ARM_CLIENT_SECRET
-    subscription_id = store.varset.prd_tokens.ARM_SUBSCRIPTION_ID   
-    tenant_id = store.varset.prd_tokens.ARM_TENANT_ID 
+    client_id = store.varset.tokens.ARM_CLIENT_ID
+    client_secret = store.varset.tokens.ARM_CLIENT_SECRET
+    subscription_id = store.varset.tokens.ARM_SUBSCRIPTION_ID   
+    tenant_id = store.varset.tokens.ARM_TENANT_ID 
   }
 }
 orchestrate "auto_approve" "safe_plans_dev" {
