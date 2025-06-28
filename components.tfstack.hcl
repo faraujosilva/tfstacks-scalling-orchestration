@@ -21,7 +21,7 @@ component "virtual_network" {
     virtual_network_name = "vnet-${var.ambiente}"
     address_space = var.address_space
     location = var.azure_region
-    resource_group_name = component.resource_group.resource_group_name
+    resource_group_name = component.resource_group.name
     app_subnet = var.app_subnet
     db_subnet = var.db_subnet
   }
