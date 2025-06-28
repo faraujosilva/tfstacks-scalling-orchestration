@@ -16,5 +16,9 @@ provider "aws" "this" {
 }
 
 provider "azurerm" "this" {
-    features {}
+  config {
+    features {
+      
+    }
+  }
 }
