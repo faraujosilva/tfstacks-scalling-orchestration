@@ -11,7 +11,7 @@ deployment "dev" {
     cloud_provider = "azure"
     azure_region = "brazilsouth"
     address_space = ["10.0.0.0/16"]
-    app_subnet = ["10.0.1.0/22"]
+    app_subnet = ["10.0.0.0/22"]
     db_subnet = ["10.0.4.0/22"]
     client_id = store.varset.dev_tokens.ARM_CLIENT_ID
     client_secret = store.varset.dev_tokens.ARM_CLIENT_SECRET
