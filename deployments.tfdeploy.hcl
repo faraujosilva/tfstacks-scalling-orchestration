@@ -6,7 +6,6 @@ deployment "dev" {
     cloud_provider = "azure"
     azure_region = "brazilsouth"
   }
-
   
 }
 
