@@ -20,6 +20,7 @@ deployment "dev" {
   }
 }
 
+
 deployment "prd" {
   inputs = {
     ambiente = "prd"
@@ -42,4 +43,38 @@ orchestrate "auto_approve" "safe_plans_dev" {
       condition = context.plan.changes.remove == 0 && context.plan.deployment == deployment.dev
       reason = "Plan has ${context.plan.changes.remove} resources to be removed."
   }
+}
+
+publish_output "dev_vnet" {
+  description = "Vnet"
+  value       = deployment.dev.virtual_network_name
+}
+publish_output "dev_vnet_id" {
+  description = "Vnet ID"
+  value       = deployment.dev.virtual_network_id
+}
+publish_output "dev_subnet_app_id" {
+  description = "Application Subnet ID"
+  value       = deployment.dev.subnet_app_id
+}
+publish_output "dev_subnet_db_id" {
+  description = "Database Subnet ID"
+  value       = deployment.dev.subnet_db_id
+}
+
+publish_output "prd_vnet" {
+  description = "Vnet"
+  value       = deployment.prd.virtual_network_name
+}
+publish_output "prd_vnet_id" {
+  description = "Vnet ID"
+  value       = deployment.prd.virtual_network_id
+}
+publish_output "prd_subnet_app_id" {
+  description = "Application Subnet ID"
+  value       = deployment.prd.subnet_app_id
+}
+publish_output "prd_subnet_db_id" {
+  description = "Database Subnet ID"
+  value       = deployment.prd.subnet_db_id
 }
