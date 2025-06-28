@@ -3,7 +3,7 @@ locals {
 }
 
 component "resource_group" {
-  source  = "./rg"
+  source  = "./modules/rg"
   inputs = {
     location = var.azure_region
     resource_group_name = "${var.nome_aplicacao}-${var.ambiente}-rg"
@@ -15,12 +15,13 @@ component "resource_group" {
 }
 
 component "virtual_network" {
-  source  = "Azure/avm-res-network-virtualnetwork/azurerm"
-  version = "0.9.1"
+  source  = "./modules/vnet"
   inputs = {
-    address_space = ["10.${local.address_octect}.0.0/16"]
+    address_space = var.address_space
     location = var.azure_region
     resource_group_name = component.resource_group.outputs.name
+    app_subnet = var.app_subnet
+    db_subnet = var.db_subnet
   }
   providers = {
     azurerm = provider.azurerm.this

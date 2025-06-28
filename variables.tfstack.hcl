@@ -30,3 +30,18 @@ variable "azure_region" {
     type        = string
     default = "brazilsouth"
 }
+
+variable "address_space" {
+    description = "Espaço de endereços para a rede virtual"
+    type        = list(string)
+}
+
+variable "app_subnet" {
+    description = "Prefixo de endereço para a sub-rede de aplicação"
+    type        = list(string)
+}
+
+variable "db_subnet" {
+    description = "Prefixo de endereço para a sub-rede de banco de dados"
+    type        = list(string)
+}
