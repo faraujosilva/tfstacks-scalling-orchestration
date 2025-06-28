@@ -59,17 +59,12 @@ resource "azurerm_subnet" "db" {
 
 output "id" {
   description = "The ID of the virtual network."
-  value       = azurerm_virtual_network.his.id
+  value       = azurerm_virtual_network.this.id
 }
 
 output "name" {
   description = "The name of the virtual network."
-  value       = azurerm_virtual_network.his.name
-}
-
-output "address_space" {
-  description = "The address space of the virtual network."
-  value       = azurerm_virtual_network.his.address_space
+  value       = azurerm_virtual_network.this.name
 }
 
 output "subnet_app_id" {

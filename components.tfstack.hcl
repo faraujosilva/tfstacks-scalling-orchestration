@@ -17,6 +17,8 @@ component "resource_group" {
 component "virtual_network" {
   source  = "./modules/vnet"
   inputs = {
+    ambiente = var.ambiente
+    virtual_network_name = "vnet-${var.ambiente}"
     address_space = var.address_space
     location = var.azure_region
     resource_group_name = component.resource_group.outputs.name
