@@ -12,6 +12,7 @@ component "resource_group" {
   providers = {
     azurerm = provider.azurerm.this
   }
+
 }
 
 component "virtual_network" {

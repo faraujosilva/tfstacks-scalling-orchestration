@@ -1,3 +1,8 @@
+store "varset" "dev_tokens" {
+  id       = "varset-5EVQ7aixsQRDwwk2"
+  category = "env"
+}
+
 deployment "dev" {
   inputs = {
     ambiente = "dev"
@@ -8,9 +13,12 @@ deployment "dev" {
     address_space = ["10.0.0.0/16"]
     app_subnet = ["10.0.1.0/22"]
     db_subnet = ["10.0.4.0/22"]
+    client_id = store.varset.dev_tokens.ARM_CLIENT_ID
+    client_secret = store.varset.dev_tokens.ARM_CLIENT_SECRET
+    subscription_id = store.varset.dev_tokens.ARM_SUBSCRIPTION_ID   
+    tenant_id = store.varset.dev_tokens.ARM_TENANT_ID 
   }
 }
-
 orchestrate "auto_approve" "safe_plans_dev" {
   check {
       # Only auto-approve in the development environment if no resources are being removed
