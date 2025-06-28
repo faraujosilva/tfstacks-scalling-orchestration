@@ -15,7 +15,7 @@ deployment "dev" {
     db_subnet = ["10.0.4.0/22"]
     client_id = store.varset.tokens.ARM_CLIENT_ID
     client_secret = store.varset.tokens.ARM_CLIENT_SECRET
-    subscription_id = store.varset.tokens.ARM_SUBSCRIPTION_ID   
+    subscription_id = "84c846a7-3273-4925-be8c-a43f407fa842" 
     tenant_id = store.varset.tokens.ARM_TENANT_ID 
   }
 }
@@ -32,7 +32,7 @@ deployment "prd" {
     db_subnet = ["10.1.4.0/22"]
     client_id = store.varset.tokens.ARM_CLIENT_ID
     client_secret = store.varset.tokens.ARM_CLIENT_SECRET
-    subscription_id = store.varset.tokens.ARM_SUBSCRIPTION_ID   
+    subscription_id = "a5200402-7c6f-495f-bdb2-ab0afe6917f1"  
     tenant_id = store.varset.tokens.ARM_TENANT_ID 
   }
 }
